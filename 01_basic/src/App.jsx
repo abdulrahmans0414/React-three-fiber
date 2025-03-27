@@ -22,10 +22,12 @@ const App = () => {
       {/* This light cant used cast shadows as it does not have a direction */}
       <ambientLight intensity={0.5} />
 
-      <Cube position={[1, 0, 0]} size={[1, 1, 1]} color={"hotpink"} />
-      <Cube position={[-1, 0, 0]} size={[1, 1, 1]} color={"green"} />
-      <Cube position={[1, 2, 0]} size={[1, 1, 1]} color={"skyblue"} />
-      <Cube position={[-1, 2, 0]} size={[1, 1, 1]} color={"yellow"} />
+      <group position={[0, -1, 0]}>
+        <Cube position={[1, 0, 0]} size={[1, 1, 1]} color={"hotpink"} />
+        <Cube position={[-1, 0, 0]} size={[1, 1, 1]} color={"green"} />
+        <Cube position={[1, 2, 0]} size={[1, 1, 1]} color={"skyblue"} />
+        <Cube position={[-1, 2, 0]} size={[1, 1, 1]} color={"yellow"} />
+      </group>
 
     </Canvas>
   )
