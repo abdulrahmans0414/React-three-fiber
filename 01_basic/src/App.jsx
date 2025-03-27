@@ -3,6 +3,14 @@ import './App.css'
 
 import React from "react";
 
+const Cube = ({ position, size, color }) => {
+  return (
+    <mesh position={position}>
+      <boxGeometry args={size} />
+      <meshStandardMaterial color={color} />
+    </mesh>
+  )
+}
 
 const App = () => {
   return (
@@ -10,27 +18,10 @@ const App = () => {
       {/* add lighting for meshStandardMaterial */}
       <directionalLight position={[0, 0, 2]} />
 
-      <mesh position={[1, 0, 0]}>
-        <boxGeometry />   {/* args = [x, y, z] for size*/}
-        {/* <meshBasicMaterial /> */}
-        <meshStandardMaterial color={"hotpink"} />
-      </mesh>
-
-      <mesh position={[-1, 0, 0]}>
-        <boxGeometry />
-        <meshStandardMaterial color={"hotpink"} />
-      </mesh>
-
-      <mesh position={[1, 2, 0]}>
-        <boxGeometry />
-        <meshStandardMaterial color={"hotpink"} />
-      </mesh>
-
-      <mesh position={[-1, 2, 0]}>
-        <boxGeometry />
-        <meshStandardMaterial color={"hotpink"} />
-      </mesh>
-
+      <Cube position={[1, 0, 0]} size={[1, 1, 1]} color={"hotpink"} />
+      <Cube position={[-1, 0, 0]} size={[1, 1, 1]} color={"hotpink"} />
+      <Cube position={[1, 2, 0]} size={[1, 1, 1]} color={"hotpink"} />
+      <Cube position={[-1, 2, 0]} size={[1, 1, 1]} color={"hotpink"} />
 
     </Canvas>
   )
