@@ -8,15 +8,28 @@ const App = () => {
   return (
     <Canvas>
       {/* add lighting for meshStandardMaterial */}
-      <directionalLight position={[1, 1, 1]} />
+      <directionalLight position={[0, 0, 2]} />
 
-
-      <mesh>
-        <boxGeometry args={[2, 2, 4]} />   {/* args = [x, y, z] for size*/}
+      <mesh position={[1, 0, 0]}>
+        <boxGeometry />   {/* args = [x, y, z] for size*/}
         {/* <meshBasicMaterial /> */}
         <meshStandardMaterial color={"hotpink"} />
       </mesh>
 
+      <mesh position={[-1, 0, 0]}>
+        <boxGeometry />
+        <meshStandardMaterial color={"hotpink"} />
+      </mesh>
+
+      <mesh position={[1, 2, 0]}>
+        <boxGeometry />
+        <meshStandardMaterial color={"hotpink"} />
+      </mesh>
+
+      <mesh position={[-1, 2, 0]}>
+        <boxGeometry />
+        <meshStandardMaterial color={"hotpink"} />
+      </mesh>
 
 
     </Canvas>
