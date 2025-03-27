@@ -1,15 +1,19 @@
-
+import { Canvas } from '@react-three/fiber';
 import './App.css'
 
 import React from "react";
 
+
 const App = () => {
   return (
-    <div className="App">
-      <h1>Welcome to React</h1>
-      <p>This is a simple React application using React Three Fiber by Abdul Rahman.</p>
+    <Canvas>
+      <mesh>
+        <boxGeometry args={[2, 2, 4]} />   {/* args = [x, y, z] for size*/}
+        <meshBasicMaterial />
+        {/* <meshStandardMaterial /> */}
+      </mesh>
 
-    </div>
+    </Canvas>
   )
 };
 
